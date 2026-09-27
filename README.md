@@ -1,80 +1,25 @@
-# PokerGame
-# Poker Game Application
+# Poker and Card Collections — Java
 
-This repository contains a Java-based Poker game implementation. The project includes features for shuffling, dealing cards, and evaluating hands for multiple players in a Five-Card Draw poker game. The structure is modular, with components for deck management, game control, and hand evaluation.
+A Java card-modeling project with deck operations and poker-hand components. The default entry point demonstrates collection operations on cards.
 
-## Features
+## Run locally
 
-1. **Deck Management**:
-   - Generate a standard 52-card deck.
-   - Shuffle, sort, rotate, and manipulate the deck.
+Use JDK 17 or later. From a POSIX shell:
 
-2. **Game Setup**:
-   - Configure player count and number of cards per hand.
-   - Deal cards to players.
+```bash
+git clone https://github.com/FuaadBashi/PokerGame.git
+cd PokerGame
+mkdir -p out
+find . -name '*.java' > sources.txt
+javac -d out @sources.txt
+java -cp out dev.lpa.Main
+```
 
-3. **Poker Hand Evaluation**:
-   - Analyze hands to determine rankings such as pairs, three of a kind, full house, etc.
-   - Identify the best and worst cards in a hand.
+## Code to explore
 
-## Code Structure
+- [Card.java](Card.java): card representation and deck helpers.
+- [Main.java](Main.java): shuffling, sorting, searching, rotating, and comparing card collections.
+- [GameController.java](Game/GameController.java): game coordination.
+- [PokerHand.java](Game/Poker/PokerHand.java) and [Ranking.java](Game/Poker/Ranking.java): hand evaluation components.
 
-### `Main.java`
-- Entry point for the application.
-- Demonstrates various deck operations such as shuffling, sorting, reversing, and rotating.
-- Includes utility methods for printing and manipulating decks.
-
-### `GameController.java`
-- Initializes and starts a new Poker game.
-- Uses the `PokerGame` class to manage gameplay.
-
-### `PokerGame.java`
-- Manages the core gameplay logic, including:
-  - Shuffling and rotating the deck.
-  - Dealing cards to players.
-  - Evaluating hands using the `PokerHand` class.
-- Displays remaining cards after dealing.
-
-### `PokerHand.java`
-- Represents a player's hand in the game.
-- Evaluates the hand to assign rankings based on poker rules.
-- Manages "keepers" (valuable cards) and "discards" (less valuable cards).
-- Provides a detailed string representation of the hand.
-
-## Prerequisites
-- Java Development Kit (JDK) version 11 or higher.
-
-## How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/poker-game
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd poker-game
-   ```
-
-3. Compile the Java files:
-   ```bash
-   javac dev/lpa/**/*.java
-   ```
-
-4. Run the application:
-   ```bash
-   java dev.lpa.games.GameController
-   ```
-
-## Example Output
-- Displays shuffled decks, dealt hands, and hand evaluations with rankings.
-- Outputs remaining cards in the deck.
-
-## Future Enhancements
-- Add support for more poker variants.
-- Enhance UI with a graphical interface.
-- Implement multiplayer support over a network.
-
-
-Enjoy playing Poker and exploring the code!
-
+The command above runs the collection demonstration. The presence of poker classes should not be read as a claim that the default executable launches a complete interactive poker game.
